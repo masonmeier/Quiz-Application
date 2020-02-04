@@ -1,165 +1,104 @@
-const STORE = {
-  questions: [//1
-    {
-      question: "Open the abbreviation HTML",
-      options: [
-        "Hyper Text Module Language",
-        "Hyper Text Markup Language",
-        "Hyper Test Markup Language",
-        "Hyperlink Markup Language"
-      ],
-      answer: "Hyper Text Markup Language"
-    },
-    //2
-    {
-      question: "What is the correct HTML tag for a new paragraph?",
-      options: [
-        "paragraph",
-        "p",
-        "pre",
-        "para"
-      ],
-      answer: "p"
-    },
-    //3
-    {
-      question: "What is the HTML attribute to reference the location of an image inside the image tag?",
-      options: [
-        "src",
-        "href",
-        "link",
-        "Location"
-      ],
-      answer: "src"
-    },
-    //4
-    {
-      question: "Which tag would you use to create a hyperlink?	",
-      options: ["a", "img", "dl", "h1"],
-      answer: "a"
-    },
-    //5
-    {
-      question: "How to write HTML Comment?",
-      options: [
-        "// This is HTML comment",
-        "/* This is HTML comment */",
-        "< !-- This is HTML comment -->",
-        "**"
-      ],
-      answer: "< !-- This is HTML comment -->"
-    },
-    //6
-    {
-      question: "What property would you use to create space between the element's border and inner content?",
-      options: [
-        "margin",
-        "padding",
-        "border",
-        "Spacing"
-      ],
-      answer: "padding"
-    },
-    //7
-    {
-      question: 'How to set the style for a specific HTML element with an id of "special"?',
-      options: [
-        "#special{ }",
-        ".special{ }",
-        "id.special{ }",
-        "element.id.special{ }"
-      ],
-      answer: "#special{ }"
-    },
-    //8
-    {
-      question: "How to remove underline from hyperlinks using CSS?",
-      options: [
-        "a {underline:none;}",
-        "a {decoration:no underline;}",
-        "a {text-decoration:no underline;}",
-        "a {text-decoration:none;}"
-      ],
-      answer: "a {text-decoration:none;}"
-    },
-    //9
-    {
-      question: "Which CSS property controls the text size?",
-      options: [
-        "text-height",
-        "font-size",
-        "text-style",
-        "text-size"
-      ],
-      answer: "font-size"
-    },
-    //10
-    {
-      question: "Which snippet of CSS is commonly used to center a website horizontally?",
-      options: [
-        "margin: 0 auto;",
-        "margin: auto 0;",
-        "site-align: center;",
-        "margin: center;"
-      ],
-      answer: "margin: 0 auto;"
-    },
-    //11
-    {
-      question: "Which built-in method returns the characters in a string beginning at the specified location?",
-      options: [
-        "getSubstring()",
-        "slice()",
-        "substr()",
-        "None of the above"
-      ],
-      answer: "substr()"
-    },
-    //12
-    {
-      question: "How we can call myFunction function in javascript?",
-      options: [
-        "call function myFunction(...)",
-        "funcall myFunction(...)",
-        "myFunction(...)",
-        "call myFunction(...)"
-      ],
-      answer: "myFunction(...)"
-    },
-    //13
-    {
-      question: "Which one is correct?",
-      options: [
-        "i =+ 1;",
-        "i += 1;",
-        "i = i++1;",
-        "+i+;"
-      ],
-      answer: "i += 1;"
-    },
-    //14
-    {
-      question: "How you can Write 'Hello W3docs' with alert?",
-      options: [
-        "alertBox('Hello W3docs');",
-        "alert('Hello W3docs');",
-        "msg('Hello W3docs');",
-        "msgBox('Hello W3docs');"
-      ],
-      answer: "alert('Hello W3docs');"
-    },
-    //15
-    {
-      question: "Which event occurs when the user clicks on an HTML element?",
-      options: [
-        "onmouseover",
-        "onhover",
-        "onsubmit",
-        "onclick"
-      ],
-      answer: "onclick"
-    }
+let score = 0;
+let index = 0;
+
+const questions = [
+  "When is the required time to have your lifting brace on?  ",
+  "What must always be done before returning a vehicle to the warehouse?",
+  "If a customer asks you to move or fix a piece of equipment that is not part of the install, what do you do?",
+  "What must be done before leaving the job site?",
+  "You have to move a weight machine upstairs. How do you prepare for this?",
+  "What information must be gathered from installed equipment? ",
+  "The Job is taking a long time and you know that your lunch is coming up. What do you do?",
+  "When is it acceptable to untuck your shirt?",
+  "Which of these is not acceptable attire for work?",
+  "A customer is upset that their installation is starting 2 minutes after the scheduled time. They are yelling in your face. What do you do?"
+];
+
+const answers = [
+
+  [
+  "In the truck", 
+  "At all times ", 
+  "During any lifting or assembling.",
+  "At all times while on the job site"
   ],
-  currentQuestion: 0,
-  score: 0
-};
+
+  [
+  "Refuel it", 
+  "Clean the cabin", 
+  "Ensure no valuables are left inside of it over night", 
+  "All of the above"
+  ],
+
+  [
+    "Tell them you'll do it for $100 cash", 
+    "Let them know its not your job", 
+    "Call your supervisor",
+    "Ignore them"
+  ],
+
+  [
+    "Clean up any areas that work was performed in",
+    "Clean up the back of the truck",
+    "Have the paperwork signed or provide an explanation as to why it was not",
+    "A and C"
+  ],
+
+  [
+    "Fully disassemble the machine",
+    "Remove the weight stack",
+    "Remove all moving parts",
+    "Call more people to help carry it"
+  ],
+
+  [
+    "The model number",
+    "The serial number and unit type",
+    "The brand name",
+    "All of the above"
+  ],
+
+  [
+    "Power through, you can eat lunch on the way home", 
+    "Call your supervisor", 
+    "Eat while working",  
+    "Take a break and eat your lunch and continue after" 
+  ],
+
+  [
+    "When the job is getting tough", 
+    "At the end of the job when the customer isn't paying attention", 
+    "At the warehouse",  
+    "Never" 
+  ],
+
+  [
+    "Khakis",  
+    "Jeans",  
+    "Thermal undershirts", 
+    "Black belts" 
+  ],
+
+  [
+    "Yell back", 
+    "Apologize and admit its your fault",  
+    "Big ol’ smack", 
+    "Tell them you understand how they feel and ask If they would like to speak to a supervisor", 
+  ],
+
+];
+
+const correctAnswers = [
+  "At all times while on the job site",
+  "All of the above", 
+  "Call your supervisor",
+  "A and C",
+  "Remove the weight stack",
+  "All of the above",
+  "Take a break and eat your lunch and continue after",
+  "Never",
+  "Jeans",
+  "Tell them you understand how they feel and ask If they would like to speak to a supervisor"
+];
+
+let STORE = { score, index, questions, answers, correctAnswers };

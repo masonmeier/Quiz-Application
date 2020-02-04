@@ -1,118 +1,141 @@
-*, *: ::before, *: ::after {
-  box-sizing: border-box;
-  font-family: sans-serif;
+* {
+    box-sizing: border-box;
+  }
+
+html { 
+    background: url(Images/Cover.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
-:root {
-  --hue-neutral: 200;
-  --hue-wrong: 0;
-  --hue-correct: 145;
-}
-
-body{
-  --hue: var(--hue-neutral);
-  padding: 0;
-  margin: 0;
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  justify-content: center;
-  align-items: center;
-  background-color: hsl(var(--hue), 100%, 20%);
-
-}
-
-body.correct {
-  --hue: var(--hue-correct);
-}
-
-body.wrong {
-  --hue: var(--hue-wrong);
-}
-
-img {
-  display: block;
-  margin: auto;
+body {
+    font-family: 'Franklin Gothic Medium';
+    width: 100vw;
+    height: auto;
+    
 }
 
 header {
-  top: 0;
-  align-items: center;
-  display: inline-block;
-  background-color: white;
-  margin: 2px;
-  height: 200px;
-  padding:5px;
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 0 0 10px 2px;
+    margin: 0 auto;
+    width: 80vw;
+    height: 100px;
+    border: 1px solid #c3c3c3;
+    text-align: center;
+    background-color: white;
+    opacity: 80%;
+    box-shadow: 5px, 10px black;
 }
 
-header img {
-  width: 250px;
-  display: inline-flex;
-  padding-top: 10px;
-  padding-left: 10px;
+img {
+    max-width: 300px;
+    display: inline-block;
+    margin-top: 5px;
+    padding-left: 30 px;
 }
 
-header h1 {
-  display: inline-block;
-  font-family: sans-serif;
-  padding-top: 10px;
-  padding-right: 10px;
+h1 {
+    display: inline-block;
+    font-size: 30px;
+    width: 300px;
+    padding-left: 30px;
+    margin-left: 80px;
+    padding-bottom: 20px;
+    margin-top: 15px;
+    vertical-align: top;
 }
 
 .container {
-  width: 800px;
-  max-width: 80%;
-  background-color: white;
-  border-radius: 5px;
-  padding: 10px;
-  box-shadow: 0 0 10px 2px;
+    margin: 0 auto;
+    padding-top: 40px;
+    width: 80vw;
+    height: 420px;
+    border: 1px solid #c3c3c3;
+    text-align: center;
+    background-color: white;
+    opacity: 80%;
+    box-shadow: 5px, 10px black;
 }
 
-.btn-grid {
-  display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 10px;
-  margin: 20px 0;
+.form {
+    display: block;
 }
 
-.btn {
-  --hue: var(--hue-neutral);
-  border: 1px solid hsl(var(--hue), 100%, 30%);
-  background-color: hsl(var(--hue), 100%, 50%);
-  border-radius: 5px;
-  padding: 10px 20px;
-  color: white;
-  outline: none;
+.question {
+    flex: 50%;
+    padding-bottom: 10px;
 }
 
-.btn:hover{
-  border-color: black;
+ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.start-button {
+	background-color:#44c767;
+	border-radius:28px;
+	border:1px solid #18ab29;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:17px;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #2f6627;
+}
+.start-button:hover {
+	background-color:#5cbf2a;
+}
+.start-button:active {
+	position:relative;
+	top:1px;
+}
+
+.next-question {
+	box-shadow: 0px 10px 14px -7px #276873;
+	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+	background-color:#599bb3;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:20px;
+	font-weight:bold;
+	padding:13px 32px;
+	text-decoration:none;
+    text-shadow:0px 1px 0px #3d768a;
+    padding-top: 20px;
+}
+.next-question:hover {
+	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+	background-color:#408c99;
+}
+.next-question:active {
+	position:relative;
+	top:1px;
+}
+
+.your-answer {
+    padding-bottom: 20px;
+}
+
+header .question-and-score {
+    font-size: 20px;
+    font-weight: 600px;
+    color:white;
+    background: none;
   }
-
-.btn.correct {
-  --hue: var(--hue-correct);
-  color: black;
-}
-
-.btn.wrong {
-  --hue: var(--hue-wrong);
-}
-
-.start-btn, .next-btn {
-  font-size: 1.5rem;
-  font-weight: bold;
-  padding: 10px 15px;
-}
-
-.controls {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hide {
-  display: none;
-}
+  
+  .question-and-score ul {
+    text-align:center;
+    padding-left: 2%;
+    padding-right: 2%;
+  }
+  
+  .question-and-score li {
+    display: inline-block;
+    padding:0 2%;
+  }
