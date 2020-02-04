@@ -1,7 +1,9 @@
 const container = $('div.container');
 
-function gradeQuestion(element) {
-  const answer = element.value;
+function gradeQuestion(e) {
+  e.preventDefault();
+  const answer = $('input[type="radio"]:checked').val()
+  console.log(answer)
   const correctAnswer = STORE.correctAnswers[STORE.index];
 
   const isCorrect = correctAnswer.includes(answer);
@@ -21,12 +23,19 @@ function makeQuestion() {
     <div class="question-number">Question ${STORE.index + 1}/${STORE.answers.length}</div>
     <div class="total-score">Score: ${STORE.score}/${STORE.answers.length}</div><br>
       <div class="question">${STORE.questions[STORE.index]}</div>
-          <input id="answer1" type="radio" name="answers" value=${answers[0]} onclick="gradeQuestion(this)">${answers[0]}
-          <input id="answer2" type="radio" name="answers" value=${answers[1]} onclick="gradeQuestion(this)">${answers[1]}
-          <input id="answer3" type="radio" name="answers" value=${answers[2]} onclick="gradeQuestion(this)">${answers[2]}
-          <input id="answer4" type="radio" name="answers" value=${answers[3]} onclick="gradeQuestion(this)">${answers[3]}
-     </form>
+      <ul>
+        <li><label for="answer1">${answers[0]}</label><input id="answer1" type="radio" name="answers" value=${answers[0]} onclick="gradeQuestion(this)"> ${answers[0]}</li>
+        <li><label for="answer2">${answers[1]}</label><input id="answer2" type="radio" name="answers" value=${answers[1]} onclick="gradeQuestion(this)"> ${answers[1]}</li>
+        <li><label for="answer3">${answers[2]}</label><input id="answer3" type="radio" name="answers" value=${answers[2]} onclick="gradeQuestion(this)"> ${answers[2]}</li>
+        <li><label for="answer4">${answers[3]}</label><input id="answer4" type="radio" name="answers" value=${answers[3]} onclick="gradeQuestion(this)"> ${answers[3]}</li>
+      </ul>
+      <div class=sbmt-cont>
+        <button id="submit-btn">Submit</button>
+      </div>
+    </form>
   `);
+$('form').submit(gradeQuestion);
+
 }
 
 function nextQuestion(isCorrect) {
@@ -35,12 +44,12 @@ function nextQuestion(isCorrect) {
     <div class="question-number">Question ${STORE.index + 1}/${STORE.answers.length}</div>
     <div class="total-score">Score: ${STORE.score}/${STORE.answers.length}</div><br>
     <div>Your answer was ${isCorrect}!</div>
-    <button class='next-question'>NEXT</button>
+    <button id='next-question'>NEXT</button>
   `)
 
   STORE.index++;
 
-  $('.next-question').click(() => {
+  $('#next-question').click(() => {
     STORE.index === STORE.questions.length ? endQuiz() : makeQuestion();
   })
 }
@@ -53,7 +62,14 @@ function endQuiz() {
   container.empty();
   container.append(`
     <div>Quiz finished. Your score was ${STORE.score} out of ${STORE.questions.length}</div>
+    <button id="restart-btn">Restart</button>
   `)
+
+  $('#restart-btn').click(function(){
+    STORE.score=0;
+    STORE.index=0;
+    makeQuestion();
+  })
 }
 
 $('.start-button').click(startQuiz);
