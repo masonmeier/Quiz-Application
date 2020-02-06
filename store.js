@@ -18,7 +18,7 @@ const answers = [
 
   [
   "In the truck", 
-  "At all times ", 
+  "The entire work day", 
   "During any lifting or assembling.",
   "At all times while on the job site"
   ],

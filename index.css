@@ -12,53 +12,51 @@ html {
 
 body {
     font-family: 'Franklin Gothic Medium';
-    font-size: larger;
-    width: 100vw;
-    height: 900px
-    
 }
 
 header {
-    margin: 0 auto;
-    margin-top: 100px;
-    padding: 15px;
-    width: 50vw;
-    height: 130px;
-    border: 1px solid #c3c3c3;
+    width: 60vw;
+    height: 20vh;
+    overflow: hidden;
+    background: whitesmoke;
+    margin: auto;
+    margin-top: 10vh;
     text-align: center;
-    background-color: whitesmoke;
-    opacity: 95%;
-    box-shadow: 5px, 10px black;
+
+}
+
+.img-hldr {
+    height: 50%; 
+    width: 50%; 
+    overflow: hidden;
+    display: inline-block;
 }
 
 img {
-    max-width: 300px;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.h1-hldr{
+    height: 40%;
+    width: 50%;
+    overflow: hidden;
     display: inline-block;
-    margin-top: 5px;
-    padding-left: 30 px;
 }
 
 h1 {
-    display: inline-block;
-    font-size: 30px;
-    width: 300px;
-    padding-left: 30px;
-    margin-left: 80px;
-    padding-bottom: 20px;
-    margin-top: 15px;
-    vertical-align: top;
+    font-size: 20px;
 }
 
+
 .container {
-    margin: 0 auto;
-    padding: 40px;
-    width: 50vw;
-    height: 420px;
+    margin: auto;
     border: 1px solid #c3c3c3;
     text-align: center;
     background-color: whitesmoke;
     opacity: 95%;
     box-shadow: 5px, 10px black;
+    width: 60vw;
 }
 
 .form {
@@ -87,10 +85,12 @@ ul {
 	font-size:17px;
 	padding:16px 31px;
 	text-decoration:none;
-	text-shadow:0px 1px 0px #2f6627;
+    text-shadow:0px 1px 0px #2f6627;
+    margin-bottom: 10vh;
 }
 .start-button:hover {
-	background-color:#5cbf2a;
+    background-color:#5cbf2a;
+    cursor: pointer;
 }
 .start-button:active {
 	position:relative;
@@ -112,11 +112,14 @@ ul {
 	text-decoration:none;
     text-shadow:0px 1px 0px #3d768a;
     margin-top: 30px;
+    margin-bottom: 10vh;
 }
 #next-question:hover {
 	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
-	background-color:#408c99;
+    background-color:#408c99;
+    cursor: pointer;
 }
+
 #next-question:active {
 	position:relative;
 	top:1px;
@@ -133,18 +136,18 @@ header .question-and-score {
     background: none;
   }
   
-  .question-and-score ul {
+.question-and-score ul {
     text-align:center;
     padding-left: 2%;
     padding-right: 2%;
   }
   
-  .question-and-score li {
+.question-and-score li {
     display: inline-block;
     padding:0 2%;
   }
 
-  .legend {
+.legend {
       width: 100px;
       height: 60px;
       margin-top: 30px;
@@ -152,10 +155,6 @@ header .question-and-score {
       display: inline-block;
       background-color: black;
       color: white;
-  }
-
-  label {
-    display: none;
   }
 
   .sbmt-cont {
@@ -166,6 +165,11 @@ header .question-and-score {
 
 ul{
     size: 50%;
+}
+
+li{
+    margin: 10px;
+    font-size: 20px;
 }
 
 #submit-btn {
@@ -182,7 +186,8 @@ ul{
 	text-shadow:0px 1px 0px #2f6627;
 }
 #submit-btn:hover {
-	background-color:#5cbf2a;
+    background-color:#5cbf2a;
+    cursor: pointer;
 }
 #submit-btn:active {
 	position:relative;
@@ -203,12 +208,13 @@ ul{
     text-shadow:0px 1px 0px #2f6627;
     margin-top: 30px;
 }
+
 #restart-btn:hover {
-	background-color:#bd2a2a;
+    background-color:#bd2a2a;
+    cursor: pointer;
 }
+
 #restart-btn:active {
 	position:relative;
     top:1px;
 }
-
-        

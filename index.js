@@ -7,7 +7,7 @@ function gradeQuestion(e) {
   const correctAnswer = STORE.correctAnswers[STORE.index];
 
   const isCorrect = correctAnswer.includes(answer);
-  const correctText = isCorrect ? "correct" : "incorrect";
+  const correctText = isCorrect ? "correct" : `incorrect. The correct answer was: <br/>${correctAnswer}`;
 
   if (isCorrect) STORE.score++;
 
@@ -24,17 +24,17 @@ function makeQuestion() {
     <div class="total-score">Score: ${STORE.score}/${STORE.answers.length}</div><br>
       <div class="question">${STORE.questions[STORE.index]}</div>
       <ul>
-        <li><label for="answer1">${answers[0]}</label><input id="answer1" type="radio" name="answers" value=${answers[0]} onclick="gradeQuestion(this)"> ${answers[0]}</li>
-        <li><label for="answer2">${answers[1]}</label><input id="answer2" type="radio" name="answers" value=${answers[1]} onclick="gradeQuestion(this)"> ${answers[1]}</li>
-        <li><label for="answer3">${answers[2]}</label><input id="answer3" type="radio" name="answers" value=${answers[2]} onclick="gradeQuestion(this)"> ${answers[2]}</li>
-        <li><label for="answer4">${answers[3]}</label><input id="answer4" type="radio" name="answers" value=${answers[3]} onclick="gradeQuestion(this)"> ${answers[3]}</li>
-      </ul>
+          <li><input id="answer1" type="radio" name="answers" value=${answers[0]} onclick="gradeQuestion(this)" required="required"><label for="answer1">${answers[0]}</label></li>
+          <li><input id="answer2" type="radio" name="answers" value=${answers[1]} onclick="gradeQuestion(this)"><label for="answer2">${answers[1]}</label></li>
+          <li><input id="answer3" type="radio" name="answers" value=${answers[2]} onclick="gradeQuestion(this)"><label for="answer3">${answers[2]}</label></li>
+          <li><input id="answer4" type="radio" name="answers" value=${answers[3]} onclick="gradeQuestion(this)"><label for="answer4">${answers[3]}</label></li>
+       </ul>
       <div class=sbmt-cont>
         <button id="submit-btn">Submit</button>
       </div>
     </form>
   `);
-$('form').submit(gradeQuestion);
+$('form').submit(gradeQuestion)
 
 }
 
