@@ -3,7 +3,7 @@
   }
 
 html { 
-    background: url(images/cover.jpg) no-repeat center center fixed; 
+    background: url(https://raw.githubusercontent.com/masonmeier/Quiz-Application/master/Images/Cover.jpg) no-repeat center center fixed; 
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
