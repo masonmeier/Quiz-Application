@@ -24,10 +24,10 @@ function makeQuestion() {
     <div class="total-score">Score: ${STORE.score}/${STORE.answers.length}</div><br>
       <div class="question">${STORE.questions[STORE.index]}</div>
       <ul>
-          <li><input id="answer1" type="radio" name="answers" value=${answers[0]} onclick="gradeQuestion(this)" required="required"><label for="answer1">${answers[0]}</label></li>
-          <li><input id="answer2" type="radio" name="answers" value=${answers[1]} onclick="gradeQuestion(this)"><label for="answer2">${answers[1]}</label></li>
-          <li><input id="answer3" type="radio" name="answers" value=${answers[2]} onclick="gradeQuestion(this)"><label for="answer3">${answers[2]}</label></li>
-          <li><input id="answer4" type="radio" name="answers" value=${answers[3]} onclick="gradeQuestion(this)"><label for="answer4">${answers[3]}</label></li>
+          <li><input id="answer1" type="radio" name="answers" value=${answers[0]} onclick="gradeQuestion" required="required"><label for="answer1">${answers[0]}</label></li>
+          <li><input id="answer2" type="radio" name="answers" value=${answers[1]} onclick="gradeQuestion"><label for="answer2">${answers[1]}</label></li>
+          <li><input id="answer3" type="radio" name="answers" value=${answers[2]} onclick="gradeQuestion"><label for="answer3">${answers[2]}</label></li>
+          <li><input id="answer4" type="radio" name="answers" value=${answers[3]} onclick="gradeQuestion"><label for="answer4">${answers[3]}</label></li>
        </ul>
       <div class=sbmt-cont>
         <button id="submit-btn">Submit</button>
