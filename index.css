@@ -16,7 +16,7 @@ body {
 
 header {
     width: 60vw;
-    height: 20vh;
+    height: 25vh;
     overflow: hidden;
     background: whitesmoke;
     margin: auto;
@@ -30,6 +30,8 @@ header {
     width: 50%; 
     overflow: hidden;
     display: inline-block;
+    margin-top: 3vh;
+    padding-top: 2vh;
 }
 
 img {
@@ -42,6 +44,7 @@ img {
     width: 50%;
     overflow: hidden;
     display: inline-block;
+    padding-bottom: 5vh;
 }
 
 h1 {
