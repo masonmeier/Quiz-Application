@@ -16,9 +16,9 @@ body {
 
 header {
     width: 60vw;
-    height: 25vh;
+    height: 30vh;
     overflow: hidden;
-    background: whitesmoke;
+    background: white;
     margin: auto;
     margin-top: 10vh;
     text-align: center;
